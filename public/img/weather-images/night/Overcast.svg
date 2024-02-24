@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="92.10928" height="65.3692" viewBox="0 0 92.10928 65.3692">
+  <defs>
+    <style>
+      .cls-1 {
+        isolation: isolate;
+      }
+
+      .cls-2 {
+        fill: url(#radial-gradient);
+      }
+
+      .cls-3, .cls-4, .cls-5 {
+        mix-blend-mode: overlay;
+      }
+
+      .cls-3 {
+        fill: url(#radial-gradient-2);
+      }
+
+      .cls-4 {
+        opacity: 0.4;
+        fill: url(#radial-gradient-3);
+      }
+
+      .cls-5 {
+        opacity: 0.2;
+        fill: url(#Degradado_sin_nombre_34);
+      }
+    </style>
+    <radialGradient id="radial-gradient" cx="57.66925" cy="13.77728" r="70.25724" gradientTransform="translate(115.33851 23.84141) rotate(180) scale(1 0.73049)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.198" stop-color="#d5f3ff"/>
+      <stop offset="1" stop-color="#85bcf1"/>
+    </radialGradient>
+    <radialGradient id="radial-gradient-2" cx="747.23533" cy="-2051.39721" r="8.47651" gradientTransform="matrix(-0.8392, 1.1536, -1.6186, -1.3126, -2640.14203, -3536.80355)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.10256" stop-color="#fff" stop-opacity="0.84849"/>
+      <stop offset="0.29029" stop-color="#fff" stop-opacity="0.59415"/>
+      <stop offset="0.4694" stop-color="#fff" stop-opacity="0.38204"/>
+      <stop offset="0.63471" stop-color="#fff" stop-opacity="0.21674"/>
+      <stop offset="0.78337" stop-color="#fff" stop-opacity="0.09804"/>
+      <stop offset="0.91014" stop-color="#fff" stop-opacity="0.02577"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="radial-gradient-3" cx="746.98015" cy="-2067.05524" r="6.66123" xlink:href="#radial-gradient-2"/>
+    <radialGradient id="Degradado_sin_nombre_34" data-name="Degradado sin nombre 34" cx="10.93463" cy="51.52626" r="4.87104" gradientTransform="matrix(0.90102, -0.43378, 1.26276, 2.62292, -63.98321, -78.87962)" xlink:href="#radial-gradient-2"/>
+  </defs>
+  <g class="cls-1">
+    <g id="Слой_2" data-name="Слой 2">
+      <g id="OBJECTS">
+        <g>
+          <path class="cls-2" d="M72.99608,25.1465a27.00444,27.00444,0,0,0-53.8809,0A20.124,20.124,0,0,0,20.123,65.3692H71.98628a20.12405,20.12405,0,0,0,1.0098-40.2227Z"/>
+          <path class="cls-3" d="M46.05658,27.6504c-7.5762-6.1465-10.5352-15.5039-6.6074-20.9043,3.9297-5.4004,13.25582-4.7929,20.8359,1.3477,7.5723,6.1445,10.5293,15.5059,6.6035,20.9043C62.957,34.4004,53.63078,33.793,46.05658,27.6504Z"/>
+          <path class="cls-4" d="M73.13858,45.8145c-5.955-4.8301-8.2793-12.1836-5.1933-16.4277,3.0879-4.2442,10.4179-3.7657,16.373,1.0586,5.9531,4.83,8.2754,12.1875,5.1914,16.4277C86.41988,51.1192,79.08978,50.6426,73.13858,45.8145Z"/>
+          <path class="cls-5" d="M14.38858,46.4903c-4.3945-6.8535-9.49609-10.1524-11.40819-7.3731-1.9043,2.7754.1094,10.5879,4.5,17.4434,4.3965,6.8535,9.502,10.1543,11.4082,7.375C20.79288,61.1485,18.78118,53.3457,14.38858,46.4903Z"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

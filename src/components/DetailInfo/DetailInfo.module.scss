@@ -1,0 +1,39 @@
+.detailInfo {
+  width: 1116px;
+  padding: 50px;
+  border-radius: 0 20px 20px 0;
+  background-color: #212224;
+  box-shadow: 0px 20px 0px rgba(0, 0, 0, 0.04);
+  .days {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 55px;
+    list-style-type: none;
+    .active {
+      transform: scale(1.2);
+      color: #fff;
+      margin-left: 28px;
+    }
+    li {
+      display: flex;
+      align-items: center;
+      margin-right: 44px;
+      position: relative;
+      font-size: 20px;
+      cursor: pointer;
+      color: #838383;
+      transition: all 0.3s ease-in-out;
+
+      img {
+        position: absolute;
+        left: -47px;
+      }
+      &:hover {
+        color: #fff;
+        transform: scale(1.2);
+      }
+    }
+  }
+}

@@ -1,0 +1,54 @@
+.weatherCard {
+  .cardTitle {
+    display: flex;
+    align-items: center;
+    box-icon {
+      width: 25px;
+      height: 26px;
+    }
+  }
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+  background: linear-gradient(
+    222deg,
+    rgb(222 17 233),
+    rgb(118, 42, 215),
+    rgb(241, 29, 128)
+  );
+  background-size: 400% 400%;
+
+  animation: animate-gradient 15s ease infinite;
+  width: 227px;
+  height: 159px;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 60px;
+
+  p {
+    font-size: 32px;
+    margin: 0;
+  }
+
+  span {
+    font-size: 22px;
+    margin-bottom: 19px;
+  }
+  box-icon {
+    height: 45px;
+    width: 45px;
+    margin-right: 5px;
+  }
+}
+
+@keyframes animate-gradient {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
