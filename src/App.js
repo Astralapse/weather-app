@@ -13,7 +13,7 @@ function App() {
   const getLocationKey = async (userCity) => {
     try {
       const key = await axios.get(
-        `http://dataservice.accuweather.com/locations/v1/cities/search?apikey=	ZvQSqYj17aiaTSo8fIlkrUSFdA3hPLLG&q=${userCity}`
+        `http://dataservice.accuweather.com/locations/v1/cities/search?apikey=UUSrlxkiIq0KBzZB5tUHr874saAa3TPk&q=${userCity}`
       );
       return key.data[0].Key;
     } catch (error) {
@@ -39,7 +39,7 @@ function App() {
           country: userGeoObj.data.features[0].properties.country,
           timezone: userGeoObj.data.features[0].properties.timezone.name,
         });
-        setTimeout(() => setIsLoading(false), 2000);
+        setTimeout(() => setIsLoading(false), 1500);
       } catch (error) {
         alert("Error when retrieving user location");
         console.error("Error when retrieving user location:", error);

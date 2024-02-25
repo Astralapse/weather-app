@@ -30,7 +30,7 @@ function ShortInfo({
         country: userGeoObj.data.features[0].properties.country,
         timezone: userGeoObj.data.features[0].properties.timezone.name,
       });
-      setIsLoading(false);
+      setTimeout(() => setIsLoading(false), 2000);
     } catch (error) {
       alert("Error when changing city");
       console.error("Error when changing city:", error);
@@ -45,7 +45,7 @@ function ShortInfo({
     try {
       const key = await getLocationKey(city);
       const response = await axios.get(
-        `https://dataservice.accuweather.com/forecasts/v1/hourly/1hour/${key}?apikey=ZvQSqYj17aiaTSo8fIlkrUSFdA3hPLLG&language=en-us&metric=true&details=true`
+        `https://dataservice.accuweather.com/forecasts/v1/hourly/1hour/${key}?apikey=UUSrlxkiIq0KBzZB5tUHr874saAa3TPk&language=en-us&metric=true&details=true`
       );
       setWeatherInfo(response.data);
     } catch (error) {
@@ -88,8 +88,8 @@ function ShortInfo({
               <img
                 width={178}
                 src={`img/weather-images/${
-                  weatherInfo[0]?.IsDaylight ? "day" : "night"
-                }/${weatherInfo[0]?.IconPhrase}.svg`}
+                  nowInNY.hour() >= 18 || nowInNY.hour() < 6 ? "night" : "day"
+                }/${weatherInfo[0]?.IconPhrase.replace("w/", "with")}.svg`}
                 alt=""
               />
               <h2>{weatherInfo[0]?.Temperature?.Value}°C</h2>
@@ -102,7 +102,7 @@ function ShortInfo({
                 {`${timeInfo.currentWeekDay} ${timeInfo.currentTime}`}
               </p>
               <p className={styles.dayInfo}>
-                {weatherInfo[0]?.IsDaylight ? "Day" : "Night"}
+                {nowInNY.hour() >= 18 || nowInNY.hour() < 6 ? "Night" : "Day"}
               </p>
               <h1
                 className={styles.city}
@@ -112,7 +112,10 @@ function ShortInfo({
             <>
               <img
                 width={178}
-                src={`img/weather-images/day/${fullWeatherDay.Day?.IconPhrase}.svg`}
+                src={`img/weather-images/day/${fullWeatherDay.Day?.IconPhrase.replace(
+                  "w/",
+                  "with"
+                )}.svg`}
                 alt=""
               />
               <h2>{fullWeatherDay.Temperature?.Maximum?.Value}°C</h2>

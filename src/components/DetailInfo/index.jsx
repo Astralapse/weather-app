@@ -26,7 +26,7 @@ function DetailInfo({
     try {
       const key = await getLocationKey(city);
       const weatherForFiveDays = await axios.get(
-        `http://dataservice.accuweather.com/forecasts/v1/daily/5day/${key}?apikey=	ZvQSqYj17aiaTSo8fIlkrUSFdA3hPLLG&language=en-us&metric=true&details=true`
+        `http://dataservice.accuweather.com/forecasts/v1/daily/5day/${key}?apikey=UUSrlxkiIq0KBzZB5tUHr874saAa3TPk&language=en-us&metric=true&details=true`
       );
       setCurrentDay(weekDayNumber);
       setFullWeatherDay(weatherForFiveDays.data.DailyForecasts[weekDayNumber]);
