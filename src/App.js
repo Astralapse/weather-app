@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import ShortInfo from "./components/ShortInfo";
 import DetailInfo from "./components/DetailInfo";
+import Loader from "./components/Loader";
 function App() {
   const [userGeo, setUserGeo] = React.useState({});
   const [weatherInfo, setWeatherInfo] = React.useState({});
@@ -12,11 +13,12 @@ function App() {
   const getLocationKey = async (userCity) => {
     try {
       const key = await axios.get(
-        `http://dataservice.accuweather.com/locations/v1/cities/search?apikey=UUSrlxkiIq0KBzZB5tUHr874saAa3TPk&q=${userCity}`
+        `http://dataservice.accuweather.com/locations/v1/cities/search?apikey=	ZvQSqYj17aiaTSo8fIlkrUSFdA3hPLLG&q=${userCity}`
       );
       return key.data[0].Key;
     } catch (error) {
-      console.error("Ошибка при получении ключа местоположения:", error);
+      alert("Error when receiving a location key");
+      console.error("Error when receiving a location key:", error);
     }
   };
 
@@ -39,14 +41,15 @@ function App() {
         });
         setTimeout(() => setIsLoading(false), 2000);
       } catch (error) {
-        console.error("Ошибка при получении координат пользователя:", error);
+        alert("Error when retrieving user location");
+        console.error("Error when retrieving user location:", error);
       }
     }
     fetchData();
   }, []);
   return (
     <div className="wrapper d-flex">
-      {isLoading ? <div className="loading"></div> : null}
+      {isLoading ? <Loader /> : null}
 
       <ShortInfo
         weatherInfo={weatherInfo}
@@ -57,6 +60,7 @@ function App() {
         setUserGeo={setUserGeo}
         setWeatherInfo={setWeatherInfo}
         setTimeInfo={setTimeInfo}
+        setIsLoading={setIsLoading}
       />
       <DetailInfo
         weatherInfo={weatherInfo}

@@ -1,15 +1,15 @@
 .detailInfo {
   width: 1116px;
+  height: 635px;
   padding: 50px;
   border-radius: 0 20px 20px 0;
   background-color: #212224;
-  box-shadow: 0px 20px 0px rgba(0, 0, 0, 0.04);
+  box-shadow: 4px 0 10px rgba(0, 0, 0, 0.5);
   .days {
     display: flex;
     align-items: center;
     padding: 0;
     margin: 0;
-    margin-bottom: 55px;
     list-style-type: none;
     .active {
       transform: scale(1.2);
@@ -32,6 +32,7 @@
       }
       &:hover {
         color: #fff;
+
         transform: scale(1.2);
       }
     }

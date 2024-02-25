@@ -11,6 +11,7 @@ function ShortInfo({
   setTimeInfo,
   setUserGeo,
   getLocationKey,
+  setIsLoading,
 }) {
   const [searchValue, setSearchValue] = React.useState("");
 
@@ -18,14 +19,22 @@ function ShortInfo({
   const nowInNY = moment().tz(userGeo.timezone);
   const nextDate = moment(fullWeatherDay?.Date);
   const changeCity = async (userCity) => {
-    const userGeoObj = await axios.get(
-      `https://api.geoapify.com/v1/geocode/search?text=${userCity}&lang=en&limit=10&type=city&apiKey=21476916bb304f32be3acfb280953f98`
-    );
-    setUserGeo({
-      city: userGeoObj.data.features[0].properties.city,
-      country: userGeoObj.data.features[0].properties.country,
-      timezone: userGeoObj.data.features[0].properties.timezone.name,
-    });
+    try {
+      setIsLoading(true);
+      setSearchValue("");
+      const userGeoObj = await axios.get(
+        `https://api.geoapify.com/v1/geocode/search?text=${userCity}&lang=en&limit=10&type=city&apiKey=21476916bb304f32be3acfb280953f98`
+      );
+      setUserGeo({
+        city: userGeoObj.data.features[0].properties.city,
+        country: userGeoObj.data.features[0].properties.country,
+        timezone: userGeoObj.data.features[0].properties.timezone.name,
+      });
+      setIsLoading(false);
+    } catch (error) {
+      alert("Error when changing city");
+      console.error("Error when changing city:", error);
+    }
   };
 
   const onChangeSearchInput = (event) => {
@@ -33,11 +42,16 @@ function ShortInfo({
   };
 
   const getWeatherInfo = async (city) => {
-    const key = await getLocationKey(city);
-    const response = await axios.get(
-      `https://dataservice.accuweather.com/forecasts/v1/hourly/1hour/${key}?apikey=UUSrlxkiIq0KBzZB5tUHr874saAa3TPk&language=en-us&metric=true&details=true`
-    );
-    setWeatherInfo(response.data);
+    try {
+      const key = await getLocationKey(city);
+      const response = await axios.get(
+        `https://dataservice.accuweather.com/forecasts/v1/hourly/1hour/${key}?apikey=ZvQSqYj17aiaTSo8fIlkrUSFdA3hPLLG&language=en-us&metric=true&details=true`
+      );
+      setWeatherInfo(response.data);
+    } catch (error) {
+      alert("Error when receiving weather information");
+      console.error("Error when receiving weather information:", error);
+    }
   };
 
   React.useEffect(() => {
